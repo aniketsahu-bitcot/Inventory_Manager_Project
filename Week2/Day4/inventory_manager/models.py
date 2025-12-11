@@ -41,3 +41,18 @@ class ElectronicProduct(Product):
 
     def __str__(self):
         return f"{super().__str__()} - Warranty: {self.warranty_period} months"
+
+class BookProduct(Product):
+    """Special product with author name and publication year."""
+
+    def __init__(self, product_id: str, name: str, quantity: int, price: float,
+                 author: str, publication_year: int):
+        super().__init__(product_id, name, quantity, price)
+        self.author = author
+        self.publication_year = publication_year
+
+    def __str__(self):
+        return (
+            f"{super().__str__()} - Author: {self.author}, "
+            f"Published: {self.publication_year}"
+        )

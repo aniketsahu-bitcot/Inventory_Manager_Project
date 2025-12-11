@@ -1,33 +1,16 @@
-from models import Product
 from models import FoodProduct
 from models import ElectronicProduct
+from models import BookProduct
 from datetime import date
 
-p = Product("P001", "Pen", 20, 10.5)
-print(p)
-print("Total value:", p.total_value())
-print("Low stock?:", p.is_low_stock())
 
-print("\n=== Testing FoodProduct ===")
-fp = FoodProduct(
-        product_id="F001",
-        name="Milk",
-        quantity=5,
-        price=30.0,
-        expiry_date=date(2025, 1, 10)
-    )
-print(fp)
-print("Total value:", fp.total_value())
-print("Low stock?:", fp.is_low_stock())
+p1 = FoodProduct("F001", "Milk", 5, 40.0, date(2025, 1, 15))
+p2 = ElectronicProduct("E100", "Laptop", 2, 60000.0, 24)
+p3 = BookProduct("B777", "Clean Code", 10, 550.0, "Robert C. Martin", 2008)
 
-print("\n=== Testing ElectronicProduct ===")
-ep = ElectronicProduct(
-        product_id="E001",
-        name="Laptop",
-        quantity=3,
-        price=1500.0,
-        warranty_period=24
-    )
-print(ep)
-print("Total value:", ep.total_value())
-print("Low stock?:", ep.is_low_stock())
+print(p1)
+print(p2)
+print(p3)
+
+print("Laptop total value:", p2.total_value())
+print("Clean Code low stock?:", p3.is_low_stock())
