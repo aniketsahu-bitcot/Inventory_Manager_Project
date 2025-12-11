@@ -20,6 +20,7 @@ class Product:
         return f"{self.name} (ID: {self.product_id})"
 
 
+
 class FoodProduct(Product):
     """Special product with expiry date."""
 
@@ -40,34 +41,3 @@ class ElectronicProduct(Product):
 
     def __str__(self):
         return f"{super().__str__()} - Warranty: {self.warranty_period} months"
-
-
-
-class BookProduct(Product):
-    """Special product with author name and publication year."""
-
-    def __init__(self, product_id: str, name: str, quantity: int, price: float,
-                 author: str, publication_year: int):
-        super().__init__(product_id, name, quantity, price)
-        self.author = author
-        self.publication_year = publication_year
-
-    def __str__(self):
-        return (
-            f"{super().__str__()} - Author: {self.author}, "
-            f"Published: {self.publication_year}"
-        )
-
-
-p1 = FoodProduct("F001", "Milk", 5, 40.0, date(2025, 1, 15))
-p2 = ElectronicProduct("E100", "Laptop", 2, 60000.0, 24)
-p3 = BookProduct("B777", "Clean Code", 10, 550.0, "Robert C. Martin", 2008)
-
-print(p1)
-print(p2)
-print(p3)
-
-print("Laptop total value:", p2.total_value())
-print("Clean Code low stock?:", p3.is_low_stock())
-
-
