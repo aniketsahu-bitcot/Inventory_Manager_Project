@@ -11,7 +11,7 @@ class Product:
         price (float): Price per unit.
     """
 
-    def __init__(self, product_id: str, name: str, quantity: int, price: float):
+    def __init__(self, product_id: str, name: str, quantity: int, price: float) -> None:
         """Initialize a Product instance.
 
         Args:
@@ -44,7 +44,7 @@ class Product:
         """
         return self.quantity < threshold
 
-    def __str__(self):
+    def __str__(self) -> str:
         """String representation of the product.
 
         Returns:
@@ -61,26 +61,19 @@ class FoodProduct(Product):
     """
 
     def __init__(
-        self, product_id: str, name: str, quantity: int, price: float, expiry_date: date
-    ):
-        """Initialize a FoodProduct instance.
-
-        Args:
-            product_id (str): Unique product ID.
-            name (str): Product name.
-            quantity (int): Quantity in stock.
-            price (float): Price per unit.
-            expiry_date (date): Expiration date of the food item.
-        """
+        self,
+        product_id: str,
+        name: str,
+        quantity: int,
+        price: float,
+        expiry_date: date,
+    ) -> None:
+        """Initialize a FoodProduct instance."""
         super().__init__(product_id, name, quantity, price)
         self.expiry_date = expiry_date
 
-    def __str__(self):
-        """String representation of the food product.
-
-        Returns:
-            str: Human-readable string with expiry date.
-        """
+    def __str__(self) -> str:
+        """String representation of the food product."""
         return f"{super().__str__()} - Expires on: {self.expiry_date}"
 
 
@@ -98,25 +91,13 @@ class ElectronicProduct(Product):
         quantity: int,
         price: float,
         warranty_period: int,
-    ):
-        """Initialize an ElectronicProduct instance.
-
-        Args:
-            product_id (str): Unique product ID.
-            name (str): Product name.
-            quantity (int): Stock quantity.
-            price (float): Price per unit.
-            warranty_period (int): Warranty duration in months.
-        """
+    ) -> None:
+        """Initialize an ElectronicProduct instance."""
         super().__init__(product_id, name, quantity, price)
         self.warranty_period = warranty_period
 
-    def __str__(self):
-        """String representation of the electronic product.
-
-        Returns:
-            str: Human-readable string with warranty information.
-        """
+    def __str__(self) -> str:
+        """String representation of the electronic product."""
         return f"{super().__str__()} - Warranty: {self.warranty_period} months"
 
 
@@ -125,7 +106,7 @@ class BookProduct(Product):
 
     Attributes:
         author (str): Author of the book.
-        publication_year (int): Year the book was published.
+        publication_year (int): Publication year.
     """
 
     def __init__(
@@ -136,27 +117,14 @@ class BookProduct(Product):
         price: float,
         author: str,
         publication_year: int,
-    ):
-        """Initialize a BookProduct instance.
-
-        Args:
-            product_id (str): Unique product ID.
-            name (str): Book title.
-            quantity (int): Number of copies in stock.
-            price (float): Price per book.
-            author (str): Author's name.
-            publication_year (int): Publication year of the book.
-        """
+    ) -> None:
+        """Initialize a BookProduct instance."""
         super().__init__(product_id, name, quantity, price)
         self.author = author
         self.publication_year = publication_year
 
-    def __str__(self):
-        """String representation of the book product.
-
-        Returns:
-            str: Human-readable string with author and publication year.
-        """
+    def __str__(self) -> str:
+        """String representation of the book product."""
         return (
             f"{super().__str__()} - Author: {self.author}, "
             f"Published: {self.publication_year}"
