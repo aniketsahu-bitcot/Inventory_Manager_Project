@@ -13,7 +13,7 @@ class Product(BaseModel):
         return f"{self.name} (ID: {self.product_id}) - Qty: {self.quantity}, Price: {self.price}"
 
 
-# INVENTORY 
+# INVENTORY
 class Inventory:
     def __init__(self):
         self.products = {}
@@ -29,14 +29,14 @@ class Inventory:
     # Load products from CSV
     # CSV Format: product_id,name,quantity,price
     def load_from_csv(self, file_path: str):
-        with open('inventory.csv', "r") as file:
+        with open("inventory.csv", "r") as file:
             reader = csv.DictReader(file)
             for row in reader:
                 product = Product(
                     product_id=row["product_id"],
                     name=row["product_name"],
                     quantity=int(row["quantity"]),
-                    price=float(row["price"])
+                    price=float(row["price"]),
                 )
                 self.add_product(product)
 
@@ -53,7 +53,7 @@ class Inventory:
         print("Total Inventory Value:", total_value)
 
 
-# EXAMPLE 
+# EXAMPLE
 inventory = Inventory()
 
 # Add manual products

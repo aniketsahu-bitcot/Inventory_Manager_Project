@@ -20,11 +20,12 @@ class Product:
         return f"{self.name} (ID: {self.product_id})"
 
 
-
 class FoodProduct(Product):
     """Special product with expiry date."""
 
-    def __init__(self, product_id: str, name: str, quantity: int, price: float, expiry_date: date):
+    def __init__(
+        self, product_id: str, name: str, quantity: int, price: float, expiry_date: date
+    ):
         super().__init__(product_id, name, quantity, price)
         self.expiry_date = expiry_date
 
@@ -35,18 +36,33 @@ class FoodProduct(Product):
 class ElectronicProduct(Product):
     """Special product with warranty period (in months)."""
 
-    def __init__(self, product_id: str, name: str, quantity: int, price: float, warranty_period: int):
+    def __init__(
+        self,
+        product_id: str,
+        name: str,
+        quantity: int,
+        price: float,
+        warranty_period: int,
+    ):
         super().__init__(product_id, name, quantity, price)
         self.warranty_period = warranty_period
 
     def __str__(self):
         return f"{super().__str__()} - Warranty: {self.warranty_period} months"
 
+
 class BookProduct(Product):
     """Special product with author name and publication year."""
 
-    def __init__(self, product_id: str, name: str, quantity: int, price: float,
-                 author: str, publication_year: int):
+    def __init__(
+        self,
+        product_id: str,
+        name: str,
+        quantity: int,
+        price: float,
+        author: str,
+        publication_year: int,
+    ):
         super().__init__(product_id, name, quantity, price)
         self.author = author
         self.publication_year = publication_year

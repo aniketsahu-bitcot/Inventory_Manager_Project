@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 
+
 class Product(BaseModel):
     product_id: str
     name: str
@@ -33,6 +34,7 @@ class Product(BaseModel):
             f"{self.name} (ID: {self.product_id}) - "
             f"Qty: {self.quantity}, Price: {self.price}"
         )
+
 
 p = Product(product_id="P1", name="Mouse", quantity=10, price=250.0)
 

@@ -62,9 +62,6 @@ def create_low_stock_report(products: List[Product]) -> None:
                 file.write(f"{p.product_id} - {p.product_name} - Qty: {p.quantity}\n")
 
 
-
 products = read_inventory()
 create_low_stock_report(products)
 print("Done! Check low_stock_report.txt and errors.log.")
-
-
