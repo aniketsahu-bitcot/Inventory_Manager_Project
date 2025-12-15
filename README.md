@@ -1,35 +1,31 @@
 # Inventory Data Processor
 
-A command-line Python tool that:
-- Reads inventory data from inventory.csv
-- Validates rows using Pydantic
-- Logs invalid rows to errors.log
-- Generates a low_stock_report.txt for products below quantity 10
+A professional command-line Python package for inventory management.
 
-## Requirements
-pip install pydantic
+## Features
 
-## Run
-python3 processor.py
+- Learned to use OOP to manage complexity by combining data (attributes) and behavior (methods) into classes.
 
-## File Outputs
-- errors.log → Contains validation problems
-- low_stock_report.txt → All products with quantity < 10
+- Refactored the procedural inventory script into Product and Inventory classes following the Single Responsibility Principle (SRP).
 
-# Inventory Data Processor
+- Applied inheritance and the Open/Closed Principle (OCP) to create specialized product types like FoodProduct.
 
-A command-line Python tool that:
-- Reads inventory data from inventory.csv
-- Validates rows using Pydantic
-- Logs invalid rows to errors.log
-- Generates a low_stock_report.txt for products below quantity 10
+- Structured the project as a Python package with proper modules, type hints, docstrings, and code quality tools (ruff, black).
 
-## Requirements
-pip install pydantic
 
-## Run
-python3 processor.py
+## Learning Journey
+- [Week 1 to 2 Overview](Docs/INDEX.md)
+- [Architecture](Docs/ARCHITECTURE.md)
+- [Setup & Installation](Docs/SETUP.md)
+- [Testing Guide](Docs/TESTING.md)
 
-## File Outputs
-- errors.log → Contains validation problems
-- low_stock_report.txt → All products with quantity < 10
+## Project Folder Structure:
+~~~
+├── Docs/
+├── README.md
+├── requirements.txt
+├── Week1/
+└── Week2/
+
+
+
