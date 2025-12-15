@@ -24,10 +24,10 @@ class Inventory:
 
     def load_from_csv(self, file_path: str):
         try:
-            with open(file_path, "r") as file:  # Fixed: Use file_path parameter
+            with open(file_path, "r") as file: 
                 reader = csv.DictReader(file)
                 for row in reader:
-                    # Handle both "name" and "product_name" for flexibility
+                    
                     name = row.get("name") or row.get("product_name")
                     product = Product(
                         product_id=row["product_id"],
