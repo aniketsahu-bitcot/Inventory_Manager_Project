@@ -1,5 +1,5 @@
 ## Inventory Manager Project Folder Structure:
-~~~
+```
 ├── Docs
 │   ├── ARCHITECTURE.md
 │   ├── INDEX.md

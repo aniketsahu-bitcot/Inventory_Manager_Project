@@ -20,7 +20,7 @@ A professional command-line Python package for inventory management.
 - [Testing Guide](Docs/TESTING.md)
 
 ## Project Folder Structure:
-~~~
+```
 ├── Docs/
 ├── README.md
 ├── requirements.txt
