@@ -38,18 +38,17 @@ class Product(BaseModel):
 
 p = Product(product_id="P1", name="Mouse", quantity=10, price=250.0)
 
-print(p)  # test __str__()
+print(p)  
 
-# Test total value
 print("Total value:", p.get_total_value())
 
-# Test low stock
+
 print("Is low stock:", p.is_low_stock())
 
-# Test restock
+
 p.restock(5)
 print("After restock:", p)
 
-# Test purchase
+
 p.purchase(3)
 print("After purchase:", p)

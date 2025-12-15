@@ -49,10 +49,10 @@ class Inventory:
         print("Total Inventory Value:", total_value)
 
 
-# EXAMPLE
+
 inventory = Inventory()
 
-# Add manual products
+
 p1 = Product(product_id="P1", name="Mouse", quantity=10, price=250)
 p2 = Product(product_id="P2", name="Keyboard", quantity=5, price=500)
 
@@ -60,5 +60,5 @@ inventory.add_product(p1)
 inventory.add_product(p2)
 
 inventory.load_from_csv("inventory.csv")
-# Generate report
+
 inventory.generate_report()
