@@ -250,6 +250,74 @@ python3
 
 ---
 
+# Week3 Installation and Setup Guide
 
+This guide explains how to install and set up the project step by step.
 
+## Prerequisites
 
+Make sure the following are installed on your system:
+
+* Python 3.9 or above
+* pip (Python package manager)
+* Git (optional, but recommended)
+
+## Step 1: Clone or Download the Project
+
+If using Git:
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+```
+
+Or download the ZIP file and extract it, then open the project folder in terminal.
+
+## Step 2: Create a Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+* On Linux / macOS:
+
+```bash
+source venv/bin/activate
+```
+
+* On Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+## Step 3: Install Dependencies
+
+Install required packages using `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+## Step 4: Week 3 Folder Structure
+
+```
+Week3/
+├── Day1/
+├── Day2/
+├── Day3/
+```
+---
+
+## Step 5: Run Day 1 Code
+
+```bash
+cd Week3/Day1
+```
+
+Run processor:
+
+```bash
+pytest
+```
