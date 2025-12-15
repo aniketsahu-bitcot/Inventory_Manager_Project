@@ -10,7 +10,7 @@ class Product:
         self.quantity = quantity
         self.price = price
 
-    def total_value(self) -> float:
+    def get_total_value(self) -> float:
         return self.quantity * self.price
 
     def is_low_stock(self, threshold: int = 10) -> bool:

@@ -1,0 +1,29 @@
+# Core project metadata
+[project]
+name = "inventory_manager"                    # Package name on PyPI
+version = "0.1.0"                             # Semantic version
+description = "Simple inventory management with Product/Inventory classes"  # Short description
+authors = [{ name = "Aniket Sahu" }]          # Author info
+readme = "README.md"                          # README file for PyPI
+requires-python = ">=3.10"                    # Minimum Python version
+
+# Runtime dependencies (installed with pip install .)
+dependencies = [
+    "pydantic>=2.0.0",                        # Data validation
+    "python-dotenv>=1.0",                     # Environment variables
+]
+
+# Optional dev dependencies (pip install .[dev])
+[project.optional-dependencies.dev]
+ruff = ">=0.5.0"                             # Linter (replaces flake8, isort, etc.)
+black = ">=24.0.0"                           # Code formatter
+pytest = ">=7.0.0"                           # Testing framework
+
+
+# OPTIONAL: Ruff linter configuration
+[tool.ruff]
+line-length = 88                              # Matches Black (not PEP8's 79)
+
+# OPTIONAL: Black formatter configuration
+[tool.black]
+line-length = 88                              # Consistent with Ruff

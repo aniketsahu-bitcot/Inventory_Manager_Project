@@ -2,7 +2,6 @@ from pydantic import BaseModel, Field
 import csv
 
 
-# PRODUCT (Only holds data)
 class Product(BaseModel):
     product_id: str
     name: str
@@ -13,43 +12,40 @@ class Product(BaseModel):
         return f"{self.name} (ID: {self.product_id}) - Qty: {self.quantity}, Price: {self.price}"
 
 
-# INVENTORY
 class Inventory:
     def __init__(self):
         self.products = {}
 
-    # Add product to inventory
     def add_product(self, product: Product):
         self.products[product.product_id] = product
 
-    # Get product by ID
-    def get_product(self, product_id: str) -> Product:
+    def get_product(self, product_id: str) -> Product | None:
         return self.products.get(product_id)
 
-    # Load products from CSV
-    # CSV Format: product_id,name,quantity,price
     def load_from_csv(self, file_path: str):
-        with open("inventory.csv", "r") as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                product = Product(
-                    product_id=row["product_id"],
-                    name=row["product_name"],
-                    quantity=int(row["quantity"]),
-                    price=float(row["price"]),
-                )
-                self.add_product(product)
+        try:
+            with open(file_path, "r") as file:  # Fixed: Use file_path parameter
+                reader = csv.DictReader(file)
+                for row in reader:
+                    # Handle both "name" and "product_name" for flexibility
+                    name = row.get("name") or row.get("product_name")
+                    product = Product(
+                        product_id=row["product_id"],
+                        name=name,
+                        quantity=int(row["quantity"]),
+                        price=float(row["price"]),
+                    )
+                    self.add_product(product)
+        except FileNotFoundError:
+            print(f"File {file_path} not found. Skipping CSV load.")
 
-    # Create a simple report
     def generate_report(self):
         print("\nInventory Report:")
         total_value = 0
-
         for product in self.products.values():
             value = product.quantity * product.price
             print(f"{product.name} | Qty: {product.quantity} | Value: {value}")
             total_value += value
-
         print("Total Inventory Value:", total_value)
 
 

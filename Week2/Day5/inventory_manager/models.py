@@ -25,7 +25,7 @@ class Product:
         self.quantity = quantity
         self.price = price
 
-    def total_value(self) -> float:
+    def get_total_value(self) -> float:
         """Calculate the total value of the product stock.
 
         Returns:

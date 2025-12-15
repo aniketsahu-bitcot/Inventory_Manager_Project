@@ -7,7 +7,7 @@ class Product(BaseModel):
     quantity: int = Field(gt=0)
     price: float = Field(gt=0.0)
 
-    def total_value(self) -> float:
+    def get_total_value(self) -> float:
         """Return total value of this product's stock."""
         return self.quantity * self.price
 
@@ -41,7 +41,7 @@ p = Product(product_id="P1", name="Mouse", quantity=10, price=250.0)
 print(p)  # test __str__()
 
 # Test total value
-print("Total value:", p.total_value())
+print("Total value:", p.get_total_value())
 
 # Test low stock
 print("Is low stock:", p.is_low_stock())
