@@ -17,7 +17,6 @@ dependencies = [
 [project.optional-dependencies.dev]
 ruff = ">=0.5.0"                             # Linter (replaces flake8, isort, etc.)
 black = ">=24.0.0"                           # Code formatter
-pytest = ">=7.0.0"                           # Testing framework
 
 
 # OPTIONAL: Ruff linter configuration
