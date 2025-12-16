@@ -1,6 +1,4 @@
 myenv/
 .pytest_cache/
-Week2/Day4/inventory_manager/__pycache__
-Week2/Day5/inventory_manager/__pycache__
-Week2/Day5/inventory_manager/.ruff_cache
-Week3/Day1/__pycache__
+.ruff_cache/
+__pycache__/

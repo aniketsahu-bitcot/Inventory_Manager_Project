@@ -303,21 +303,15 @@ pip install -r requirements.txt
 ## Step 4: Week 3 Folder Structure
 
 ```
-Week3/
-├── Day1/
-├── Day2/
-├── Day3/
+Week3
+├── conftest.py
+├── __init__.py
+├── __pycache__
+├── pyproject.toml
+├── test_core.py
+└── test_models.py
 ```
 ---
 
-## Step 5: Run Day 1 Code
-
-```bash
-cd Week3/Day1
-```
-
-Run processor:
-
-```bash
-pytest
-```
+## Step 5: Set up completed 
+Set up has completed and We can explore our directory and run the commands.

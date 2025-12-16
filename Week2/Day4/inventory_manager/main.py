@@ -3,7 +3,6 @@ from models import FoodProduct, ElectronicProduct, BookProduct
 from core import Inventory
 
 
-
 milk = FoodProduct("F001", "Milk", 5, 40.0, date(2025, 1, 15))
 laptop = ElectronicProduct("E100", "Laptop", 2, 60000.0, 24)
 clean_code = BookProduct("B777", "Clean Code", 10, 550.0, "Robert C. Martin", 2008)

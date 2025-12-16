@@ -24,10 +24,10 @@ class Inventory:
 
     def load_from_csv(self, file_path: str):
         try:
-            with open(file_path, "r") as file: 
+            with open(file_path, "r") as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    
+
                     name = row.get("name") or row.get("product_name")
                     product = Product(
                         product_id=row["product_id"],
@@ -47,7 +47,6 @@ class Inventory:
             print(f"{product.name} | Qty: {product.quantity} | Value: {value}")
             total_value += value
         print("Total Inventory Value:", total_value)
-
 
 
 inventory = Inventory()
