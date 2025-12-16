@@ -1,6 +1,5 @@
 import csv
-
-from .models import Product
+from Week2.Day4.inventory_manager.models import Product
 
 
 class Inventory:
