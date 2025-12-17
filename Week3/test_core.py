@@ -65,3 +65,42 @@ def test_inventory_str_representation(inventory_with_multiple_products):
     result = str(inventory)
 
     assert result.startswith("3 items")
+
+
+
+def test_add_duplicate_overwrites(inventory_with_one_product, laptop_product):
+    
+    laptop_product.name = "Duplicate Laptop" 
+    laptop_product.quantity = 3             
+    
+  
+    inventory_with_one_product.add_product(laptop_product)
+    result = inventory_with_one_product.get_product("P001")
+    
+  
+    assert result.name == "Duplicate Laptop"     
+    assert result.quantity == 3                  
+    
+  
+    laptop_product.name = "Laptop"
+    laptop_product.quantity = 5
+
+
+def test_remove_nonexistent(empty_inventory):
+
+    empty_inventory.remove_product("NONEXISTENT")
+
+    assert len(empty_inventory.products) == 0  
+
+def test_empty_low_stock(empty_inventory):
+
+    low_stock = empty_inventory.low_stock_products(threshold=5)
+ 
+    assert len(low_stock) == 0  
+
+def test_empty_inventory_value(empty_inventory):
+  
+    value = empty_inventory.get_inventory_value()
+  
+    assert value == 0.0 
+

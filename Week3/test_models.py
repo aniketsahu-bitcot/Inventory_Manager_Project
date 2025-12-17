@@ -63,3 +63,52 @@ def test_str_representation(tablet_product):
     result = str(product)
 
     assert result == "Tablet (ID: P006)"
+
+def test_zero_quantity_from_fixture(laptop_product):
+    
+    laptop_product.quantity = 0  
+    total_value = laptop_product.get_total_value()
+    laptop_product.quantity = 5 
+   
+    assert total_value == 0.0  
+
+def test_zero_price_from_fixture(laptop_product):
+   
+    laptop_product.price = 0.0  
+  
+    total_value = laptop_product.get_total_value()
+    laptop_product.price = 50000.0  
+   
+    assert total_value == 0.0  
+
+def test_negative_quantity_low_stock(laptop_product):
+    
+    laptop_product.quantity = -5  
+ 
+    is_low = laptop_product.is_low_stock()
+    laptop_product.quantity = 5 
+
+    assert is_low is True 
+
+# Test: High stock boundary (qty >= threshold → NOT low)
+def test_exact_threshold_not_low(monitor_product):
+
+    is_low = monitor_product.is_low_stock(20)  
+  
+    assert is_low is False 
+
+# Test: Low stock boundary (qty == threshold → ?)
+def test_low_stock_exact_boundary(low_stock_product):
+
+    is_low = low_stock_product.is_low_stock(3) 
+  
+    assert is_low is False  
+
+def test_fixture_restoration(laptop_product):
+  
+    original_qty = laptop_product.quantity
+    
+    laptop_product.quantity = 999
+    laptop_product.quantity = original_qty
+   
+    assert laptop_product.quantity == 5
