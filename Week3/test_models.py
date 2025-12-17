@@ -64,7 +64,7 @@ def test_str_representation(tablet_product):
 
     assert result == "Tablet (ID: P006)"
 
-def test_zero_quantity_from_fixture(laptop_product):
+def test_zero_quantity_from(laptop_product):
     
     laptop_product.quantity = 0  
     total_value = laptop_product.get_total_value()
@@ -72,7 +72,7 @@ def test_zero_quantity_from_fixture(laptop_product):
    
     assert total_value == 0.0  
 
-def test_zero_price_from_fixture(laptop_product):
+def test_zero_price_from(laptop_product):
    
     laptop_product.price = 0.0  
   
@@ -104,7 +104,7 @@ def test_low_stock_exact_boundary(low_stock_product):
   
     assert is_low is False  
 
-def test_fixture_restoration(laptop_product):
+def test_restoration(laptop_product):
   
     original_qty = laptop_product.quantity
     
@@ -112,3 +112,5 @@ def test_fixture_restoration(laptop_product):
     laptop_product.quantity = original_qty
    
     assert laptop_product.quantity == 5
+
+
