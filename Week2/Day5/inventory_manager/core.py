@@ -1,6 +1,5 @@
 import csv
-
-from models import Product
+from Week2.Day4.inventory_manager.models import Product
 
 
 class Inventory:
@@ -41,7 +40,7 @@ class Inventory:
         """
         self.products.pop(product_id, None)
 
-    def total_inventory_value(self) -> float:
+    def get_inventory_value(self) -> float:
         """Calculate total monetary value of all products.
 
         Returns:
@@ -105,4 +104,4 @@ class Inventory:
         Returns:
             Formatted string with product count and total value.
         """
-        return f"{len(self.products)} items: ${self.total_inventory_value():,.2f}"
+        return f"{len(self.products)} items: ${self.get_inventory_value():,.2f}"

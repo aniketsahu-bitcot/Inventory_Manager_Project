@@ -38,7 +38,7 @@ class Product(BaseModel):
 
 p = Product(product_id="P1", name="Mouse", quantity=10, price=250.0)
 
-print(p)  
+print(p)
 
 print("Total value:", p.get_total_value())
 

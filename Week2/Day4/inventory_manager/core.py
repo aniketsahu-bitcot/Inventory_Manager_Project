@@ -1,5 +1,5 @@
 import csv
-from models import Product 
+from models import Product
 
 
 class Inventory:
@@ -18,10 +18,8 @@ class Inventory:
         self.products.pop(product_id, None)
 
     def total_inventory_value(self) -> float:
-        return sum(
-            p.get_total_value() for p in self.products.values()
-        )  
-    
+        return sum(p.get_total_value() for p in self.products.values())
+
     def low_stock_products(self, threshold: int = 10) -> list[Product]:
         return [p for p in self.products.values() if p.is_low_stock(threshold)]
 
@@ -47,7 +45,7 @@ class Inventory:
         print("\nInventory Report:")
         total_value = 0
         for product in self.products.values():
-            value = product.get_total_value() 
+            value = product.get_total_value()
             print(f"{product.name} | Qty: {product.quantity} | Value: {value}")
             total_value += value
         print("Total Inventory Value:", total_value)

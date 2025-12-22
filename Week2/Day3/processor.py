@@ -127,7 +127,6 @@ class Inventory:
         return f"Inventory with {len(self.products)} products, total value: ${self.total_inventory_value():,.2f}"
 
 
-
 p1 = FoodProduct("F001", "Milk", 5, 40.0, date(2025, 1, 15))
 p2 = ElectronicProduct("E100", "Laptop", 2, 60000.0, 24)
 p3 = BookProduct("B777", "Clean Code", 10, 550.0, "Robert C. Martin", 2008)
